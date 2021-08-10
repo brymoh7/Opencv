@@ -1,0 +1,368 @@
+<!-- Created by tolu -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+           <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <style>
+      * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+header {
+  display: grid;
+  place-items: center;
+  color: white;
+  width: 100%;
+  text-align: center;
+
+  background: #833ab4; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #fcb045,
+    #fd1d1d,
+    #833ab4
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #fcb045,
+    #fd1d1d,
+    #833ab4
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+header div:nth-child(1) {
+  font-size: 30px;
+  font-weight: 800;
+  margin: 15px auto 10px;
+  text-shadow: 0 0 10px;
+}
+header div:nth-child(2) {
+  width: 60%;
+}
+header div:nth-child(2) img {
+  width: 60%;
+  margin: 15px auto 10px;
+  filter: drop-shadow(0 0 12px black);
+}
+
+#text p span{
+  font-size: 20px;
+}
+#text p {
+    position: relative;
+  color: white;
+  font-size: 25px;
+  text-align: center;
+font-weight: 700;
+  margin: 60px auto 0;
+  padding: 10px;
+  width: 90%;
+  
+  z-index: 2;
+  border-radius: 12px;
+}
+#text h1{
+  margin-top: 30px;
+  text-align: center;
+  
+  font-size: 72px;
+  background: -webkit-linear-gradient(135deg,#f403d1,#64b5f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#text p::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(15px);
+  /* transform: translateY(5px) scale(0.9); */
+  z-index: -1;
+}
+#text ul li{
+  padding: 15px;
+  text-align: left;
+  font-size: 22px;
+  border-bottom: 3px solid plum;
+  margin-bottom: -5px;
+  font-weight: 500;
+  text-align: center;
+}
+#text p:nth-child(odd),
+#text p:nth-child(odd)::before
+{
+    background: linear-gradient(135deg,#f403d1,#64b5f6);
+}
+#text p:nth-child(even),
+#text p:nth-child(even)::before
+{
+    background: linear-gradient(135deg,#24ff72,#2196f3);
+
+}
+/* according style start */
+
+.container {
+  margin: 0 auto 70px;
+  padding: 1rem;
+  width: 90%;
+}
+.container h2{
+  margin-top: 10px;
+  text-align: center;
+}
+.accordion .accordion-item {
+  border-bottom: 1px solid #e5e5e5;
+}
+.accordion .accordion-item button[aria-expanded=true] {
+  border-bottom: 1px solid #03b5d2;
+}
+.accordion button {
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 1em 0;
+  color: #7288a2;
+  font-size: 1.15rem;
+  font-weight: 400;
+  border: none;
+  background: none;
+  outline: none;
+}
+.accordion button:hover, .accordion button:focus {
+  cursor: pointer;
+  color: #03b5d2;
+}
+.accordion button:hover::after, .accordion button:focus::after {
+  cursor: pointer;
+  color: #03b5d2;
+  border: 1px solid #03b5d2;
+}
+.accordion button .accordion-title {
+  padding: 1em 1.5em 1em 0;
+}
+.accordion button .icon {
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid;
+  border-radius: 22px;
+}
+.accordion button .icon::before {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 9px;
+  left: 5px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+}
+.accordion button .icon::after {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+}
+.accordion button[aria-expanded=true] {
+  color: #03b5d2;
+}
+.accordion button[aria-expanded=true] .icon::after {
+  width: 0;
+}
+.accordion button[aria-expanded=true] + .accordion-content {
+  opacity: 1;
+  max-height: 30em;
+  transition: all 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 200ms linear, max-height 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content ul li {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 1em 0;
+}
+
+
+/* according style end */
+
+#ul{
+  list-style-position: inside;
+}
+#ul li{
+color: white;
+padding: 5px;
+border-radius: 12px;
+padding-left: 10px;
+/* text-align: center; */
+font-weight: 600;
+}
+#ul li:nth-child(odd),
+#ul li:nth-child(odd)::before
+{
+    background: linear-gradient(135deg,#f403d1,#64b5f6);
+}
+#ul li:nth-child(even),
+#ul li:nth-child(even)::before
+{
+    background: linear-gradient(135deg,#24ff72,#2196f3);
+
+}
+      </style>
+    <title>Introduction of OPENCV</title>
+</head>
+<body>
+<header>
+    <div>Introduction of OPENCV</div>
+    <div><img src="https://opencv.org/wp-content/uploads/2021/01/OpenCV-logo.png" alt="err"></div>
+</header>
+ <section id="text">
+     <p data-aos="zoom-in-down">
+        OpenCV (Open Source Computer Vision Library) is an open source computer vision and machine learning software library. OpenCV was built to provide a common infrastructure for computer vision applications and to accelerate the use of machine perception in the commercial products. Being a BSD-licensed product, OpenCV makes it easy for businesses to utilize and modify the code.
+     </p>
+     <p data-aos="zoom-in-down">
+        The library has more than 2500 optimized algorithms, which includes a comprehensive set of both classic and state-of-the-art computer vision and machine learning algorithms. These algorithms can be used to detect and recognize faces, identify objects, classify human actions in videos, track camera movements, track moving objects, extract 3D models of objects, produce 3D point clouds from stereo cameras, stitch images together to produce a high resolution image of an entire scene, find similar images from an image database, remove red eyes from images taken using flash, follow eye movements, recognize scenery and establish markers to overlay it with augmented reality, etc. OpenCV has more than 47 thousand people of user community and estimated number of downloads exceeding 18 million. The library is used extensively in companies, research groups and by governmental bodies.
+     </p>
+     <p  data-aos="zoom-in-down">
+        Along with well-established companies like Google, Yahoo, Microsoft, Intel, IBM, Sony, Honda, Toyota that employ the library, there are many startups such as Applied Minds, VideoSurf, and Zeitera, that make extensive use of OpenCV. OpenCV’s deployed uses span the range from stitching streetview images together, detecting intrusions in surveillance video in Israel, monitoring mine equipment in China, helping robots navigate and pick up objects at Willow Garage, detection of swimming pool drowning accidents in Europe, running interactive art in Spain and New York, checking runways for debris in Turkey, inspecting labels on products in factories around the world on to rapid face detection in Japan.
+     </p>
+     <p data-aos="zoom-in-down">
+        It has C++, Python, Java and MATLAB interfaces and supports Windows, Linux, Android and Mac OS. OpenCV leans mostly towards real-time vision applications and takes advantage of MMX and SSE instructions when available. A full-featured CUDAand OpenCL interfaces are being actively developed right now. There are over 500 algorithms and about 10 times as many functions that compose or support those algorithms. OpenCV is written natively in C++ and has a templated interface that works seamlessly with STL containers.
+     </p>
+ </section>
+ <section id="text">
+
+    <h1 class="heading" data-aos="zoom-in-down">Computer Vision</h1>
+    <p data-aos="zoom-in-down">Computer Vision can be defined as a discipline that explains how to reconstruct, interrupt, and understand a 3D scene from its 2D images, in terms of the properties of the structure present in the scene. It deals with modeling and replicating human vision using computer software and hardware.</p>
+    <p data-aos="zoom-in-down">Computer Vision overlaps significantly with the following fields :−
+    <ul data-aos="zoom-in-down" style="list-style-position: inside;">
+       <li><span>Image Processing</span> It focuses on image manipulation.</li>
+       <li><span>Pattern Recognition</span> It explains various techniques to classify patterns.</li>
+       <li><span>Photogrammetry</span>It is concerned with obtaining accurate measurements from images.</li>
+    </ul>
+   </p>
+ </section>
+
+ <section id="text">
+    <h1 data-aos="zoom-in-down">Computer Vision Vs Image Processing</h1>
+    <p data-aos="zoom-in-down">Image processing deals with image-to-image transformation. The input and output of image processing are both images.</p>
+    <p data-aos="zoom-in-down">Computer vision is the construction of explicit, meaningful descriptions of physical objects from their image. The output of computer vision is a description or an interpretation of structures in 3D scene.</p>
+ </section>
+
+
+ <!-- According start -->
+ <div class="container">
+   <section id="text">
+     <p data-aos="zoom-in-down">Applications of Computer Vision<br>
+      <span>
+      Here we have listed down some of major domains where Computer Vision is heavily used.
+    </span> 
+    </p>
+   </section>
+  
+   <div class="accordion">
+     <div class="accordion-item">
+       <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title" data-aos="zoom-in-down">Robotics Application</span><span class="icon" aria-hidden="true"></span></button>
+       <div class="accordion-content">
+         <ul id="ul" data-aos="zoom-in-down">
+            <li>Localization − Determine robot location automatically</li>
+            <li>Navigation</li>
+            <li>Obstacles avoidance</li>
+            <li>Assembly (peg-in-hole, welding, painting)</li>
+            <li>Manipulation (e.g. PUMA robot manipulator)</li>
+            <li>Human Robot Interaction (HRI) − Intelligent robotics to interact with and serve people</li>
+            
+         </ul>
+       </div>
+     </div>
+     <div class="accordion-item">
+       <button id="accordion-button-2" aria-expanded="false"><span class="accordion-title" data-aos="zoom-in-down">Medicine Application</span><span class="icon" aria-hidden="true"></span></button>
+       <div class="accordion-content">
+         <ul id="ul" data-aos="zoom-in-down">
+            <li>Classification and detection (e.g. lesion or cells classification and tumor detection)</li>
+            <li>2D/3D segmentation</li>
+            <li>3D human organ reconstruction (MRI or ultrasound)</li>
+            <li>Vision-guided robotics surgery</li>
+         </ul>
+       </div>
+     </div>
+     <div class="accordion-item">
+       <button id="accordion-button-3" aria-expanded="false"><span class="accordion-title" data-aos="zoom-in-down">Industrial Automation Application</span><span class="icon" aria-hidden="true"></span></button>
+       <div class="accordion-content">
+         <ul id="ul" data-aos="zoom-in-down">
+            <li>Industrial inspection (defect detection)</li>
+            <li>Assembly</li>
+            <li>Barcode and package label reading</li>
+            <li>Object sorting</li>
+            <li>Document understanding (e.g. OCR)</li>
+         </ul>
+       </div>
+     </div>
+     <div class="accordion-item">
+       <button id="accordion-button-4" aria-expanded="false"><span class="accordion-title" data-aos="zoom-in-down">Security Application</span><span class="icon" aria-hidden="true"></span></button>
+       <div class="accordion-content">
+         <ul id="ul" data-aos="zoom-in-down">
+            <li>Biometrics (iris, finger print, face recognition)</li>
+            <li>Surveillance − Detecting certain suspicious activities or behaviors</li>
+         </ul>
+       </div>
+     </div>
+     <div class="accordion-item">
+       <button id="accordion-button-5" aria-expanded="false"><span class="accordion-title" data-aos="zoom-in-down">Transportation Application</span><span class="icon" aria-hidden="true"></span></button>
+       <div class="accordion-content">
+         <ul id="ul" data-aos="zoom-in-down">
+            <li>Autonomous vehicle</li>
+            <li>Safety, e.g., driver vigilance monitoring</li>
+         </ul>
+       </div>
+     </div>
+   </div>
+ </div>
+ <!-- according end -->
+
+
+
+
+
+ <script>const items = document.querySelectorAll(".accordion button");
+
+  function toggleAccordion() {
+    const itemToggle = this.getAttribute('aria-expanded');
+    
+    for (i = 0; i < items.length; i++) {
+      items[i].setAttribute('aria-expanded', 'false');
+    }
+    
+    if (itemToggle == 'false') {
+      this.setAttribute('aria-expanded', 'true');
+    }
+  }
+  
+  items.forEach(item => item.addEventListener('click', toggleAccordion));</script>
+ <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+ <script>
+   AOS.init();
+   swal("Hope you will like this code and don't forget to check out a small opencv project on youtube by our tean admn :- https://www.youtube.com/channel/UCEY672gqkUt-EdFuAXRQtLQ\n for more information check out my last code");
+ </script>
+</body>
+</html>
